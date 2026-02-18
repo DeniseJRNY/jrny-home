@@ -1204,7 +1204,7 @@
 
         .your-team-header {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
             margin-bottom: 60px;
@@ -3273,7 +3273,7 @@
         /* Mission Section */
         .mission-section {
             background: #000000;
-            padding: 100px 60px;
+            padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
             position: relative;
             overflow: hidden;
         }
@@ -3283,7 +3283,7 @@
             grid-template-columns: 1fr 1fr;
             max-width: 1400px;
             margin: 0 auto;
-            gap: 60px;
+            gap: clamp(30px, 5vw, 60px);
             align-items: stretch;
         }
 
@@ -3318,7 +3318,7 @@
 
         .mission-content {
             background: linear-gradient(180deg, #0a0a0a 0%, #1a1a0f 50%, #0d0d05 100%);
-            padding: 50px;
+            padding: clamp(24px, 4vw, 50px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -3351,12 +3351,12 @@
         }
 
         .mission-content h2 {
-            font-size: 48px;
+            font-size: clamp(24px, 3.8vw, 48px);
             font-weight: 400;
             font-style: normal;
             color: #ffffff;
             line-height: 1.2;
-            margin-bottom: 40px;
+            margin-bottom: clamp(20px, 3vw, 40px);
         }
 
         .mission-content h2 span {
@@ -3364,18 +3364,18 @@
         }
 
         .mission-content p {
-            font-size: 16px;
+            font-size: clamp(14px, 1.4vw, 16px);
             line-height: 1.8;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: clamp(12px, 1.5vw, 20px);
         }
 
         .mission-author {
-            margin-top: 40px;
+            margin-top: clamp(20px, 3vw, 40px);
         }
 
         .mission-author-name {
-            font-size: 24px;
+            font-size: clamp(18px, 2vw, 24px);
             font-weight: 600;
             color: #ffffff;
             display: block;
@@ -3383,7 +3383,7 @@
         }
 
         .mission-author-title {
-            font-size: 18px;
+            font-size: clamp(14px, 1.5vw, 18px);
             font-style: normal;
             color: #ffffff;
         }
@@ -3417,47 +3417,15 @@
         }
 
         @media (max-width: 1200px) {
-            .mission-section {
-                padding: 80px 40px;
-            }
-
             .mission-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
-            .mission-content {
-                padding: 40px;
-            }
-
-            .mission-content h2 {
-                font-size: 36px;
-            }
         }
 
         @media (max-width: 768px) {
-            .mission-section {
-                padding: 60px 20px;
-            }
-
-            .mission-content {
-                padding: 30px 20px;
-            }
-
-            .mission-content h2 {
-                font-size: 28px;
-            }
-
-            .mission-content p {
-                font-size: 14px;
-            }
-
-            .mission-author-name {
-                font-size: 20px;
-            }
-
-            .mission-author-title {
-                font-size: 16px;
+            .mission-section > div:first-child {
+                margin-bottom: 30px !important;
             }
         }
 
@@ -4134,9 +4102,80 @@
             }
         }
 
+        /* Results Dashboard Styles */
+        .results-dashboard {
+            background: #d4d4d4;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            container-type: inline-size;
+            width: 100%;
+        }
+        .rd-header {
+            background: #333333;
+            padding: 2cqi 3.2cqi;
+        }
+        .rd-header span {
+            font-size: clamp(11px, 2.8cqi, 14px);
+            font-weight: 400;
+            color: #ffffff;
+        }
+        .rd-row {
+            display: grid;
+            gap: 1.2cqi;
+        }
+        .rd-row-top {
+            grid-template-columns: 1fr 1fr;
+            padding: 1.2cqi 1.2cqi 0.6cqi;
+        }
+        .rd-row-bottom {
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 0.6cqi 1.2cqi 1.2cqi;
+        }
+        .rd-card {
+            background: #ffffff;
+            border-radius: 4px;
+            padding: 4.8cqi 3.2cqi;
+            text-align: center;
+        }
+        .rd-number {
+            font-weight: 700;
+            color: #333333;
+            line-height: 1.2;
+            margin-bottom: 0.8cqi;
+        }
+        .rd-number-lg {
+            font-size: clamp(20px, 8.4cqi, 42px);
+        }
+        .rd-number-sm {
+            font-size: clamp(14px, 5.6cqi, 28px);
+        }
+        .rd-label {
+            font-size: clamp(8px, 2.6cqi, 13px);
+            color: #888888;
+            font-weight: 400;
+            margin-bottom: 2cqi;
+        }
+        .rd-badge {
+            display: inline-block;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 0.6cqi 2.4cqi;
+        }
+        .rd-badge-green {
+            font-size: clamp(8px, 2.4cqi, 12px);
+            color: #4CAF50;
+            font-weight: 500;
+        }
+        .rd-badge-red {
+            font-size: clamp(8px, 2.4cqi, 12px);
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
         /* Responsive for Brisbane DMA Section */
         @media (max-width: 768px) {
-            .brisbane-dma-section > div > div:last-child {
+            .brisbane-dma-section > div:first-of-type {
                 grid-template-columns: 1fr !important;
                 gap: 40px !important;
             }
@@ -4145,6 +4184,29 @@
             }
             .brisbane-dma-section h2 {
                 font-size: 32px !important;
+            }
+            .brisbane-dma-section h3 {
+                font-size: 22px !important;
+            }
+            .brisbane-dma-section p {
+                font-size: 16px !important;
+            }
+            .results-dashboard {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .brisbane-dma-section > div:first-of-type > div:last-child {
+                max-width: 500px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .brisbane-dma-section h2 {
+                font-size: 26px !important;
+            }
+            .brisbane-dma-section h3 {
+                font-size: 18px !important;
             }
         }
 
@@ -4155,10 +4217,21 @@
             }
         }
 
-        /* Responsive for mission header */
+        /* Responsive grids for case studies, testimonials, and inline sections */
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
         @media (max-width: 768px) {
-            .mission-section > div:first-child h2 {
-                font-size: 32px !important;
+            .case-studies-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .brisbane-dma-section > div:first-of-type > div > h3 {
+                font-size: 22px !important;
             }
         }
     </style>
@@ -4760,20 +4833,57 @@
     </div>
 
     <!-- Brisbane Digital Marketing Section -->
-    <section class="brisbane-dma-section" style="padding: 100px 60px; background: #000;">
-        <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; margin-bottom: 50px; color: #ffffff;">Brisbane Digital Marketing Agency & Paid Advertising Experts</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+    <section class="brisbane-dma-section" style="padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); background: #000;">
+        <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: clamp(30px, 4vw, 50px); color: #ffffff;">Brisbane Digital Marketing Agency<br>& Paid Advertising Experts</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 60px); align-items: center;">
             <div>
-                <p style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 16px;">We are a conversion focused Digital Marketing Agency that prides itself on performance.</p>
-                <p style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 16px;">This means we specialise in getting you a <strong style="color: #ffffff;">RETURN. ON. INVESTMENT.</strong></p>
-                <p style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 16px;">We partner with business owners and help them get in front of their ideal prospects and turn them into customers. The only challenge you'll have is trying to keep up with the influx of sales coming through the door.</p>
-                <p style="font-size: 18px; line-height: 1.8; color: #cccccc; margin-bottom: 16px;">However, we only work with businesses we truly believe we can help to ensure we can get all our clients results.</p>
-                <p style="font-size: 18px; line-height: 1.8; color: #cccccc;">If you're an ambitious brand owner and you're ready to scale, schedule a strategy call and let's have a chat!</p>
+                <p style="font-size: clamp(15px, 1.5vw, 18px); line-height: 1.8; color: #cccccc; margin-bottom: 16px;">We are a conversion focused Digital Marketing Agency that prides itself on performance.</p>
+                <p style="font-size: clamp(15px, 1.5vw, 18px); line-height: 1.8; color: #cccccc; margin-bottom: 16px;">This means we specialise in getting you a <strong style="color: #ffffff;">RETURN. ON. INVESTMENT.</strong></p>
+                <p style="font-size: clamp(15px, 1.5vw, 18px); line-height: 1.8; color: #cccccc; margin-bottom: 16px;">We partner with business owners and help them get in front of their ideal prospects and turn them into customers. The only challenge you'll have is trying to keep up with the influx of sales coming through the door.</p>
+                <p style="font-size: clamp(15px, 1.5vw, 18px); line-height: 1.8; color: #cccccc; margin-bottom: 16px;">However, we only work with businesses we truly believe we can help to ensure we can get all our clients results.</p>
+                <p style="font-size: clamp(15px, 1.5vw, 18px); line-height: 1.8; color: #cccccc;">If you're an ambitious brand owner and you're ready to scale, schedule a strategy call and let's have a chat!</p>
                 <a href="contact-us.html" class="btn-primary" style="margin-top: 32px; display: inline-block;">Get Started</a>
             </div>
             <div>
-                <h3 style="font-size: 28px; font-weight: 500; color: #F5A623; margin-bottom: 24px; line-height: 1.3; text-align: center;">We Focus On Results, Not Vanity Metrics That Don't Matter</h3>
-                <img src="https://ik.imagekit.io/2z8yysunx/JRNY/fb_ads_results.avif" alt="Facebook Ads Results" style="width: 100%; height: auto; border-radius: 16px;">
+                <!-- Facebook Ads Dashboard - Exact Replica with Animated Numbers -->
+                <div class="results-dashboard">
+                    <!-- Header -->
+                    <div class="rd-header">
+                        <span>Facebook Ads</span>
+                    </div>
+                    <!-- Top Row - 2 Cards -->
+                    <div class="rd-row rd-row-top">
+                        <div class="rd-card">
+                            <div class="rd-number rd-number-lg"><span class="counter-up" data-target="166">0</span></div>
+                            <div class="rd-label">Booth Bookings</div>
+                            <div class="rd-badge"><span class="rd-badge-green">▲ 100%</span></div>
+                        </div>
+                        <div class="rd-card">
+                            <div class="rd-number rd-number-lg"><span class="counter-up" data-target="205">0</span></div>
+                            <div class="rd-label">Website Enquiries & Subscribers</div>
+                            <div class="rd-badge"><span class="rd-badge-green">▲ 100%</span></div>
+                        </div>
+                    </div>
+                    <!-- Bottom Row - 3 Cards -->
+                    <div class="rd-row rd-row-bottom">
+                        <div class="rd-card">
+                            <div class="rd-number rd-number-sm"><span class="counter-up" data-target="7277.40" data-prefix="$" data-separator="true" data-decimals="2">$0.00</span></div>
+                            <div class="rd-label">Ad Spend</div>
+                            <div class="rd-badge"><span class="rd-badge-red">▲ 100%</span></div>
+                        </div>
+                        <div class="rd-card">
+                            <div class="rd-number rd-number-sm"><span class="counter-up" data-target="62581.00" data-prefix="$" data-separator="true" data-decimals="2">$0.00</span></div>
+                            <div class="rd-label">Revenue Generated</div>
+                            <div class="rd-badge"><span class="rd-badge-green">▲ 100%</span></div>
+                        </div>
+                        <div class="rd-card">
+                            <div class="rd-number rd-number-sm"><span class="counter-up" data-target="8.60" data-decimals="2">0.00</span></div>
+                            <div class="rd-label">ROI</div>
+                            <div class="rd-badge"><span class="rd-badge-green">▲ 100%</span></div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="font-size: clamp(18px, 2.5vw, 28px); font-weight: 500; color: #F5A623; margin-top: clamp(16px, 2vw, 24px); line-height: 1.3; text-align: center;">We Focus On Results, Not Vanity Metrics That Don't Matter</h3>
             </div>
         </div>
     </section>
@@ -4952,10 +5062,10 @@
     </section>
 
     <!-- Our Services Section -->
-    <section class="your-team-section" style="padding: 100px 60px; background: #000;">
-        <div class="services-header" style="text-align: left; margin-bottom: 60px;">
+    <section class="your-team-section" style="padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); background: #000;">
+        <div class="services-header" style="text-align: left; margin-bottom: clamp(30px, 5vw, 60px);">
             <span class="your-team-badge"><span class="your-team-badge-dot"></span>OUR SERVICES</span>
-            <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; margin-bottom: 0; color: #ffffff;">No BS. No Fluff. Just Real Results.<br>We're A Conversion-Focused Marketing Agency That Gets You A Return On Investment.</h2>
+            <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: 0; color: #ffffff;">No BS. No Fluff. Just Real Results.<br>We're A Conversion-Focused Marketing Agency That Gets You A Return On Investment.</h2>
         </div>
 
         <div class="your-team-grid">
@@ -5010,12 +5120,12 @@
     </section>
 
     <!-- Case Studies Showcase Section -->
-    <section style="padding: 100px 60px; background: #000;">
-        <div style="text-align: left; margin-bottom: 60px;">
+    <section style="padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); background: #000;">
+        <div style="text-align: left; margin-bottom: clamp(30px, 5vw, 60px);">
             <span class="your-team-badge"><span class="your-team-badge-dot"></span>Case Studies</span>
-            <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; margin-bottom: 0; color: #ffffff;">See some of our work done for amazing clients</h2>
+            <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: 0; color: #ffffff;">See some of our work done for amazing clients</h2>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div class="case-studies-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 3vw, 30px);">
             <!-- Naudic Case Study -->
             <div>
                 <div style="position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16/10; margin-bottom: 24px;">
@@ -5040,14 +5150,14 @@
     </section>
 
     <!-- Client Testimonials Grid Section -->
-    <section style="padding: 100px 60px; background: #000;">
-        <div style="text-align: left; margin-bottom: 60px;">
-            <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; margin-bottom: 16px; color: #ffffff;">Don't Just Take Our Word For It</h2>
+    <section style="padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); background: #000;">
+        <div style="text-align: left; margin-bottom: clamp(30px, 5vw, 60px);">
+            <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: 16px; color: #ffffff;">Don't Just Take Our Word For It</h2>
             <p style="font-size: 18px; color: #ffffff; line-height: 1.6;">Hear from real business owners who partnered with us and saw real results.</p>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(16px, 3vw, 30px);">
             <!-- Daniel Porter -->
-            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px 30px; text-align: center; position: relative; overflow: hidden;">
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: clamp(24px, 3.5vw, 40px) clamp(16px, 2.5vw, 30px); text-align: center; position: relative; overflow: hidden;">
                 <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.06) 0%, transparent 60%); pointer-events: none;"></div>
                 <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Daniel%20Porter.avif" alt="Daniel Porter" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; display: block; border: 2px solid rgba(245,166,35,0.3);">
                 <h3 style="font-size: 20px; font-weight: 600; color: #ffffff; margin-bottom: 4px;">Daniel Porter</h3>
@@ -5055,7 +5165,7 @@
                 <p style="font-size: 16px; line-height: 1.8; color: #cccccc;">"JRNY Digital completely transformed our lead generation. We went from burning cash on ads to generating leads at 60% lower cost. The team genuinely cares about our results and treats our business like their own."</p>
             </div>
             <!-- Natalie Tuffley -->
-            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px 30px; text-align: center; position: relative; overflow: hidden;">
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: clamp(24px, 3.5vw, 40px) clamp(16px, 2.5vw, 30px); text-align: center; position: relative; overflow: hidden;">
                 <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.06) 0%, transparent 60%); pointer-events: none;"></div>
                 <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Natalie%20Tuffley.avif" alt="Natalie Tuffley" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; display: block; border: 2px solid rgba(245,166,35,0.3);">
                 <h3 style="font-size: 20px; font-weight: 600; color: #ffffff; margin-bottom: 4px;">Natalie Tuffley</h3>
@@ -5063,7 +5173,7 @@
                 <p style="font-size: 16px; line-height: 1.8; color: #cccccc;">"Working with JRNY has been a game-changer for Naudic. Their strategic approach to our digital marketing has driven consistent revenue growth and helped us scale beyond what we thought was possible."</p>
             </div>
             <!-- Guy Sharabi -->
-            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 40px 30px; text-align: center; position: relative; overflow: hidden;">
+            <div style="background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: clamp(24px, 3.5vw, 40px) clamp(16px, 2.5vw, 30px); text-align: center; position: relative; overflow: hidden;">
                 <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,166,35,0.06) 0%, transparent 60%); pointer-events: none;"></div>
                 <img src="https://ik.imagekit.io/2z8yysunx/JRNY/Guy%20Sharabi.avif" alt="Guy Sharabi" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; display: block; border: 2px solid rgba(245,166,35,0.3);">
                 <h3 style="font-size: 20px; font-weight: 600; color: #ffffff; margin-bottom: 4px;">Guy Sharabi</h3>
@@ -5164,9 +5274,9 @@
 
     <!-- Mission Section -->
     <section class="mission-section">
-        <div style="text-align: left; margin-bottom: 60px; padding: 0;">
+        <div style="text-align: left; margin-bottom: clamp(30px, 5vw, 60px); padding: 0;">
             <span class="your-team-badge"><span class="your-team-badge-dot"></span>WHY WE DO IT</span>
-            <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; color: #ffffff;">Our mission is to join businesses on their <em style="font-style: italic; color: #F5A623;">journey</em> to growth</h2>
+            <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; color: #ffffff;">Our mission is to join businesses on their <em style="font-style: italic; color: #F5A623;">journey</em> to growth</h2>
         </div>
         <div class="mission-container">
             <div class="mission-image">
@@ -5195,8 +5305,8 @@
     </section>
 
     <!-- Client Testimonial Video Section -->
-    <section style="padding: 100px 60px; background: #000; text-align: center;">
-        <h2 style="font-size: 52px; font-weight: 400; line-height: 1.1; margin-bottom: 50px; color: #ffffff;">What Our Clients Say About Us</h2>
+    <section style="padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px); background: #000; text-align: center;">
+        <h2 style="font-size: clamp(28px, 4.5vw, 52px); font-weight: 400; line-height: 1.1; margin-bottom: clamp(30px, 4vw, 50px); color: #ffffff;">What Our Clients Say About Us</h2>
         <div style="max-width: 800px; margin: 0 auto;">
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px;">
                 <iframe src="https://player.vimeo.com/video/686545061?h=0&title=0&byline=0&portrait=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 16px;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -5544,6 +5654,51 @@
                 document.querySelector(`.case-study[data-content="${targetTab}"]`).classList.add('active');
             });
         });
+
+        // Animated Counter - counts up when scrolled into view
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter-up');
+                    counters.forEach(counter => {
+                        if (counter.dataset.animated) return;
+                        counter.dataset.animated = 'true';
+                        const target = parseFloat(counter.dataset.target);
+                        const prefix = counter.dataset.prefix || '';
+                        const suffix = counter.dataset.suffix || '';
+                        const decimals = parseInt(counter.dataset.decimals) || 0;
+                        const useSeparator = counter.dataset.separator === 'true';
+                        const duration = 2000;
+                        const startTime = performance.now();
+
+                        function formatNumber(num) {
+                            const fixed = num.toFixed(decimals);
+                            if (!useSeparator) return prefix + fixed + suffix;
+                            const parts = fixed.split('.');
+                            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                            return prefix + parts.join('.') + suffix;
+                        }
+
+                        function animate(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = target * eased;
+                            counter.textContent = formatNumber(current);
+                            if (progress < 1) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                counter.textContent = formatNumber(target);
+                            }
+                        }
+                        requestAnimationFrame(animate);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const dashboard = document.querySelector('.results-dashboard');
+        if (dashboard) counterObserver.observe(dashboard);
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
